@@ -1,15 +1,15 @@
-import javafx.application.Application;
-import javafx.stage.Stage;
+import DB.DBConnection;
+import DB.Query;
 
-public class App extends Application {
+import java.sql.Connection;
+import java.sql.SQLException;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+public class App  {
 
-    }
+    static Connection connection = DBConnection.getConnection();
 
-    public static void main(String[] args) {
-        launch(args);
+    public static void main(String[] args) throws SQLException {
+        Query.leerDatos(connection);
     }
 
 }
